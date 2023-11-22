@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova de Conhecimento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Prova de Conhecimento</h2>
+
+  <form id="quizForm">
+    <!-- Pergunta 1 -->
+    <label>1. O que significa API?</label>
+    <select name="q1">
+      <option value="">Selecione...</option>
+      <option value="a">Application Programming Interface</option>
+      <option value="b">Advanced Programming Interface</option>
+      <option value="c">Automated Programming Interface</option>
+    </select>
+
+    <!-- Pergunta 2 -->
+    <label>2. Qual é a principal responsabilidade do back-end em uma aplicação?</label>
+    <select name="q2">
+      <option value="">Selecione...</option>
+      <option value="a">Lidar com a interface do usuário</option>
+      <option value="b">Gerenciar a lógica de negócios e o acesso ao banco de dados</option>
+      <option value="c">Implementar o design e a aparência da aplicação</option>
+    </select>
+
+    <!-- Pergunta 3 -->
+    <label>3. Qual é o framework Node.js recomendado para desenvolvimento back-end usando TypeScript?</label>
+    <select name="q3">
+      <option value="">Selecione...</option>
+      <option value="a">Express</option>
+      <option value="b">NestJs</option>
+      <option value="c">Koa</option>
+    </select>
+
+    <!-- Pergunta 4 -->
+    <label>4. Qual é a principal função do Prisma ORM?</label>
+    <select name="q4">
+      <option value="">Selecione...</option>
+      <option value="a">Framework de front-end</option>
+      <option value="b">Mapeamento objeto-relacional para bancos de dados</option>
+      <option value="c">Linguagem de consulta para APIs REST</option>
+    </select>
+
+    <!-- Pergunta 5 -->
+    <label>5. O que é TypeScript?</label>
+    <select name="q5">
+      <option value="">Selecione...</option>
+      <option value="a">Uma linguagem de marcação</option>
+      <option value="b">Uma extensão do JavaScript que adiciona tipagem estática</option>
+      <option value="c">Um sistema operacional</option>
+    </select>
+
+    <!-- Pergunta 6 -->
+    <label>6. Quais são as tecnologias principais para desenvolvimento front-end?</label>
+    <select name="q6">
+      <option value="">Selecione...</option>
+      <option value="a">HTML, CSS, Python</option>
+      <option value="b">JavaScript, TypeScript, Java</option>
+      <option value="c">React, Angular, Vue</option>
+    </select>
+
+    <!-- Pergunta 7 -->
+    <label>7. Qual é o objetivo do Electron em conjunto com React?</label>
+    <select name="q7">
+      <option value="">Selecione...</option>
+      <option value="a">Desenvolvimento de aplicativos mobile</option>
+      <option value="b">Desenvolvimento de aplicativos desktop usando tecnologias web</option>
+      <option value="c">Desenvolvimento de jogos em Unity</option>
+    </select>
+
+    <!-- Pergunta 8 -->
+    <label>8. O que significa CSS?</label>
+    <select name="q8">
+      <option value="">Selecione...</option>
+      <option value="a">Computer Style Sheets</option>
+      <option value="b">Creative Style Sheets</option>
+      <option value="c">Cascading Style Sheets</option>
+    </select>
+
+    <!-- Pergunta 9 -->
+    <label>9. O que é o Swagger?</label>
+    <select name="q9">
+      <option value="">Selecione...</option>
+      <option value="a">Uma ferramenta para criar animações em páginas web</option>
+      <option value="b">Uma especificação para documentação de APIs</option>
+      <option value="c">Um framework para desenvolvimento mobile</option>
+    </select>
+
+    <!-- Pergunta 10 -->
+    <label>10. Qual é o principal uso do GitHub?</label>
+    <select name="q10">
+      <option value="">Selecione...</option>
+      <option value="a">Rede social</option>
+      <option value="b">Plataforma para hospedar e revisar código-fonte</option>
+      <option value="c">Ferramenta de design gráfico</option>
+    </select>
+
+    <button type="button" onclick="corrigir()">Corrigir</button>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    function corrigir() {
+      const respostasCorretas = {
+        q1: 'a',
+        q2: 'b',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b',
+        q6: 'c',
+        q7: 'b',
+        q8: 'c',
+        q9: 'b',
+        q10: 'b',
+      };
+
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+      let pontuacao = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const respostaUsuario = form.elements[`q${i}`].value;
+        const respostaCorreta = respostasCorretas[`q${i}`];
+
+        if (respostaUsuario === respostaCorreta) {
+          pontuacao++;
+        }
+      }
+
+      resultDiv.textContent = `Você acertou ${pontuacao} de 10 perguntas.`;
+    }
+  </script>
+
+</body>
+</html>
