@@ -6,6 +6,10 @@
   <title>Prova de Conhecimento</title>
   <style>
     body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    allign-items: center;
       font-family: Arial, sans-serif;
       max-width: 600px;
       margin: 20px auto;
@@ -128,10 +132,10 @@
       <option value="b">Plataforma para hospedar e revisar código-fonte</option>
       <option value="c">Ferramenta de design gráfico</option>
     </select>
-
-    <button type="button" onclick="corrigir()">Corrigir</button>
   </form>
-
+  
+  <button type="button" onclick="corrigir()">Corrigir</button>
+  
   <div id="result" class="result"></div>
 
   <script>
