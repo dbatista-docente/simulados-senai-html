@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segunda Prova de Conhecimento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Segunda Prova de Conhecimento</h2>
+
+  <form id="quizForm">
+    <!-- Pergunta 11 -->
+    <label>11. O que significa REST no contexto de APIs web?</label>
+    <select name="q11">
+      <option value="">Selecione...</option>
+      <option value="a">Representational State Transfer</option>
+      <option value="b">Responsive Environment for Server Tasks</option>
+      <option value="c">Random Endpoint Service Transfer</option>
+    </select>
+
+    <!-- Pergunta 12 -->
+    <label>12. O que é uma rota no desenvolvimento back-end?</label>
+    <select name="q12">
+      <option value="">Selecione...</option>
+      <option value="a">Um caminho físico</option>
+      <option value="b">Um meio de transporte</option>
+      <option value="c">Um caminho específico em uma aplicação para lidar com solicitações HTTP</option>
+    </select>
+
+    <!-- Pergunta 13 -->
+    <label>13. O que é Dependency Injection no NestJs?</label>
+    <select name="q13">
+      <option value="">Selecione...</option>
+      <option value="a">Uma técnica para tratar dependências químicas</option>
+      <option value="b">Um padrão de projeto que ajuda a controlar a criação de objetos</option>
+      <option value="c">Uma função de console no JavaScript</option>
+    </select>
+
+    <!-- Pergunta 14 -->
+    <label>14. Como você define uma relação "muitos para muitos" (many-to-many) com o Prisma ORM?</label>
+    <select name="q14">
+      <option value="">Selecione...</option>
+      <option value="a">@relation('many-to-many')</option>
+      <option value="b">@manyToMany()</option>
+      <option value="c">@hasManyToMany()</option>
+    </select>
+
+    <!-- Pergunta 15 -->
+    <label>15. Em TypeScript, como você define um tipo de dados que pode ser uma string ou um número?</label>
+    <select name="q15">
+      <option value="">Selecione...</option>
+      <option value="a">type StringOrNumber = string | number;</option>
+      <option value="b">let StringOrNumber: string | number;</option>
+      <option value="c">interface StringOrNumber extends string, number {}</option>
+    </select>
+
+    <button type="button" onclick="corrigir()">Corrigir</button>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    function corrigir() {
+      const respostasCorretas = {
+        q11: 'a',
+        q12: 'c',
+        q13: 'b',
+        q14: 'b',
+        q15: 'a',
+      };
+
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+      let pontuacao = 0;
+
+      for (let i = 11; i <= 15; i++) {
+        const respostaUsuario = form.elements[`q${i}`].value;
+        const respostaCorreta = respostasCorretas[`q${i}`];
+
+        if (respostaUsuario === respostaCorreta) {
+          pontuacao++;
+        }
+      }
+
+      resultDiv.textContent = `Você acertou ${pontuacao} de 5 perguntas.`;
+    }
+  </script>
+
+</body>
+</html>
