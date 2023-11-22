@@ -84,6 +84,51 @@
       <option value="c">interface StringOrNumber extends string, number {}</option>
     </select>
 
+    <!-- Pergunta 16 -->
+    <label>16. O que são frameworks JavaScript populares para desenvolvimento front-end?</label>
+    <select name="q16">
+      <option value="">Selecione...</option>
+      <option value="a">Django, Flask, Express</option>
+      <option value="b">React, Angular, Vue</option>
+      <option value="c">Java, C#, Python</option>
+    </select>
+
+    <!-- Pergunta 17 -->
+    <label>17. Qual é a principal vantagem de usar o Electron para desenvolvimento de aplicativos desktop com React?</label>
+    <select name="q17">
+      <option value="">Selecione...</option>
+      <option value="a">Suporte nativo a dispositivos móveis</option>
+      <option value="b">Possibilidade de empacotar aplicativos para Windows, macOS e Linux</option>
+      <option value="c">Melhor desempenho em navegadores web</option>
+    </select>
+
+    <!-- Pergunta 18 -->
+    <label>18. O que significa a cascata em Cascading Style Sheets (CSS)?</label>
+    <select name="q18">
+      <option value="">Selecione...</option>
+      <option value="a">Uma cachoeira de estilos</option>
+      <option value="b">Um padrão de estilo específico</option>
+      <option value="c">A aplicação de estilos de várias fontes, onde as regras se sobrepõem</option>
+    </select>
+
+    <!-- Pergunta 19 -->
+    <label>19. Qual é o principal propósito do Swagger na documentação de APIs?</label>
+    <select name="q19">
+      <option value="">Selecione...</option>
+      <option value="a">Criar animações interativas</option>
+      <option value="b">Padronizar a documentação de APIs REST</option>
+      <option value="c">Realizar testes automatizados</option>
+    </select>
+
+    <!-- Pergunta 20 -->
+    <label>20. Além de hospedar código-fonte, o que mais o GitHub oferece?</label>
+    <select name="q20">
+      <option value="">Selecione...</option>
+      <option value="a">Serviços de streaming</option>
+      <option value="b">Controle de versão distribuído</option>
+      <option value="c">Plataforma de jogos online</option>
+    </select>
+
     <button type="button" onclick="corrigir()">Corrigir</button>
   </form>
 
@@ -97,13 +142,18 @@
         q13: 'b',
         q14: 'b',
         q15: 'a',
+        q16: 'b',
+        q17: 'b',
+        q18: 'c',
+        q19: 'b',
+        q20: 'b',
       };
 
       const form = document.getElementById('quizForm');
       const resultDiv = document.getElementById('result');
       let pontuacao = 0;
 
-      for (let i = 11; i <= 15; i++) {
+      for (let i = 11; i <= 20; i++) {
         const respostaUsuario = form.elements[`q${i}`].value;
         const respostaCorreta = respostasCorretas[`q${i}`];
 
@@ -112,7 +162,7 @@
         }
       }
 
-      resultDiv.textContent = `Você acertou ${pontuacao} de 5 perguntas.`;
+      resultDiv.textContent = `Você acertou ${pontuacao} de 10 perguntas.`;
     }
   </script>
 
